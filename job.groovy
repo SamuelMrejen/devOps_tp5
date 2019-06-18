@@ -14,5 +14,6 @@ job('Job 1 Deployment') {
     steps {
         shell("npm install")
         shell("npm test")
+        
     }
 }

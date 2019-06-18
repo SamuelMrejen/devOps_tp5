@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest"
+    
   },
   "engines": {
     "node": "^4.6.1"

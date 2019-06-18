@@ -1,7 +1,7 @@
-const index = require('./index')
+const functions = require('./functions')
 
 test('Say Hello ', () => {
-    expect(index.sayHello("Sam")).toBe("Hello Sam")
+    expect(functions.sayHello("Sam")).toBe("Hello Sam")
 })
 
 test('Say hello to user Sam ', () => {
@@ -13,7 +13,7 @@ test('Say hello to user Sam ', () => {
 
     findUserByName = jest.fn().mockReturnValue(user);
     getName = jest.fn().mockReturnValue(user.name);
-    const result = index.sayHelloToUser(user);
+    const result = functions.sayHelloToUser(user);
     expect(result).toBe('Hello Sam');
 })
 
@@ -25,6 +25,6 @@ test('Find user by name', () => {
     };
 
     findUserByName = jest.fn().mockReturnValue(user);
-    const result = index.findUserByName("Sam");
+    const result = functions.findUserByName("Sam");
     expect(JSON.stringify(result)).toBe(JSON.stringify(user));
 })

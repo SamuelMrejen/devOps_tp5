@@ -15,14 +15,28 @@ node {
         stage('build image ') {
             sh 'docker image build -t myapp:1.0 .'
     }
-     stage('docker build/push') {
+    
+        stage('test') {
+        nodejs(nodeJSInstallationName: 'NodeJS12') {
+        sh 'npm test'
+        }
+    }
+        stage('linter install') {
+        nodejs(nodeJSInstallationName: 'NodeJS12') {
+        sh 'npm i -g eslint'
+        }
+    }
+        stage('test linte') {
+        nodejs(nodeJSInstallationName: 'NodeJS12') {
+        sh 'eslint --no-eslintrc index.js'
+        }
+    }
+       stage('docker build/push') {
          docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
            def app = docker.build("samuelmrejen/apptp5:${commit_id}", '.').push()
          }
        }
-       
-        stage('docker deploy') {
+       stage('docker deploy') {
             sh "docker container run --rm -p 3000:3000 --name myapp samuelmrejen/apptp5:${commit_id}"
        }
-    
     }

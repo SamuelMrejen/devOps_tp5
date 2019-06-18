@@ -13,6 +13,8 @@ job('Job 1 Deployment') {
     }
     steps {
         shell("npm install")
+        shell("docker build -t node:1.0 .")
+        shell("docker container run --rm --name myappTp5 -p 3000:3000 node:1.0")
         shell("npm test")
         
     }

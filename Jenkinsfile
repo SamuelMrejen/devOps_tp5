@@ -11,7 +11,6 @@ node {
        sh 'npm install'
      }
    }
- 
 
     stage('build image ') {
         sh 'docker image build -t myapp:1.0 .'
@@ -22,6 +21,18 @@ node {
        sh 'npm test'
      }
    }
+     stage('linter install') {
+     nodejs(nodeJSInstallationName: 'NodeJS12') {
+       sh 'npm i -g eslint'
+     }
+   }
+    stage('test linte') {
+     nodejs(nodeJSInstallationName: 'NodeJS12') {
+       sh 'eslint --no-eslintrc index.js'
+     }
+   }
+
+   
    
 //    stage('docker build/push') {
 //      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {

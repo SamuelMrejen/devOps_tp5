@@ -2,13 +2,19 @@
 
 ## Fichers
 Le repertoire contient:
-un fichier index.js pour le lancement du projet  nodejs
+
+Un fichier index.js pour le lancement du projet  nodejs
+
 Un fichier index.test.js qui contient les tests unitaire
 
 Jenkins:
+
 Il ya un fichier Jenkinsfile pour la pipeline preprod
+
 Il ya un fichier JenkinsfileProd pour la pipeline Prod
---Il ya un fichier  job.groovy pour lancer les job mais c'etait avant d'utiliser les Jenkinsfile donc il ne sert plus--
+
+(Il ya un fichier  job.groovy pour lancer les job mais c'etait avant d'utiliser les Jenkinsfile donc il ne sert plus)
+
 Il ya un Dockerfile qui permet le build de l'image nodejs(version 12)
 
 

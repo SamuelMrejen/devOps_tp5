@@ -1,6 +1,6 @@
-#TP n5 Dockerfile / jenkins
+# TP n5 Dockerfile / jenkins
 
-##Fichers
+## Fichers
 Le repertoire contient:
 un fichier index.js pour le lancement du projet  nodejs
 Un fichier index.test.js qui contient les tests unitaire
@@ -12,11 +12,11 @@ Il ya un fichier JenkinsfileProd pour la pipeline Prod
 Il ya un Dockerfile qui permet le build de l'image nodejs(version 12)
 
 
-##Etapes à suivre
+## Etapes à suivre
 
 Lancer un container Jenkins.
 
-*docker run -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock --name jenkins jenkins/jenkins:lts*
+**docker run -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock --name jenkins jenkins/jenkins:lts**
 
 Dans le container Jenkins installer Docker pour pouvoir realiser du Docker in Docker.
 
